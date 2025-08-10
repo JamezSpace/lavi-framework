@@ -1,0 +1,5 @@
+<nav>
+    @for (menu of nav_menus; track $index) {
+        <a [routerLink]="menu.path">{{ menu.label }}</a>
+    }
+</nav>
