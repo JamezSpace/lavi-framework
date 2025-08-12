@@ -1,5 +1,57 @@
-<nav>
-    @for (menu of nav_menus; track $index) {
-        <a [routerLink]="menu.path">{{ menu.label }}</a>
-    }
-</nav>
+<header class="lavi-flex justify-between px-5 py-3 font-normal glassy-blur sticky top-0 z-[2]">
+    <img src="/logo_text_no_bg.png" alt="lavis's logo" class="w-10 object-cover">
+
+    <nav class="flex items-center max-md:hidden justify-between gap-3.5 text-[90%]">
+        @for (menu of nav_menus; track $index) {
+        @if (menu.inPageNavigation) {
+            <a (click)="scrollToSection(menu.path)" class="capitalize cursor-pointer">{{ menu.label }}</a>
+        } @else {
+            <a 
+                [routerLink]="menu.path" 
+                class="capitalize"
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact: true}"
+            >{{ menu.label }}</a>
+        }
+        }
+    </nav>
+
+    <section class="right-section lavi-flex gap-x-4 text-[90%]">
+        <a href="/auth" class="max-md:hidden">Log In</a>
+        <button class="lavi-button friendly">Start Learning</button>
+        <button 
+            (click)="toggleMobileNav()" 
+            class="text-2xl btn hidden max-md:inline-block"
+            id="toggle-mobile-nav-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3.5 7.5h17M3.5 12h14m-14 4.5h17" stroke-width="1"/></svg>
+        </button>
+    </section>
+</header>
+
+<div class="mobile-nav-container px-5 py-5 pb-10 fixed top-0 w-full h-[110dvh] z-[5]" #mobileNavContainer>
+    <div class="row text-right">
+        <button
+            (click)="toggleMobileNav()"
+            class="text-3xl btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.2" d="m7.757 16.243l8.486-8.486m0 8.486L7.757 7.757"/></svg>
+        </button>
+    </div>
+
+    <nav class="mt-10 flex flex-col justify-start gap-3.5 px-2.5">
+        @for (menu of nav_menus; track $index) {
+        @if (menu.inPageNavigation) {
+            <a (click)="scrollToSection(menu.path)" class="capitalize cursor-pointer">{{ menu.label }}</a>
+        } @else {
+            <a 
+                [routerLink]="menu.path" 
+                class="capitalize"
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact: true}"
+            >{{ menu.label }}</a>
+        }
+        }
+    </nav>
+
+    <a href="/auth" class="lavi-button secondary white block mt-8 mb-4 max-[376px]:inline-block">Log In</a>
+    <button class="lavi-button hidden max-[376px]:inline-block ml-5">Start Learning</button>
+</div>
