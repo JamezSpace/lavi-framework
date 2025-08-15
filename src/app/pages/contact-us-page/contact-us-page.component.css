@@ -1,0 +1,14 @@
+.sub-heading {
+    text-transform: capitalize;
+    font-size: 110%;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+}
+
+.row {
+    margin-bottom: 10px;
+}

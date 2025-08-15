@@ -1,0 +1,56 @@
+<app-page-nav-bar />
+
+<section class="heros">
+    <article class="px-5 mx-auto">
+        <h1 class="capitalize text-center">find your perfect learning partner</h1>
+        <p class="text-[110%] text-center">
+            Tell us about your learning needs and, we'll connect you with the perfect Lavi tutor. Our expert team
+            ensures
+            the highest quality of teaching for your success.
+        </p>
+    </article>
+    <section class="px-5 my-10">
+        <h2 class="capitalize color-primary">tell us what you need</h2>
+        <form>
+            <div class="row flex gap-3 items-start max-[510px]:flex-col">
+                <div class="field flex-[1]">
+                    <label for="exam-learning-mode">your preferrred learning mode</label>
+                    <mat-radio-group aria-labelledby="exam-learning-mode" id="exam-learning-mode"
+                        [(ngModel)]="selectedLearningMode" name="learning-mode">
+                        @for (mode of learningModes; track mode) {
+                        <mat-radio-button [value]="mode" class="radio-btn">{{mode}}</mat-radio-button>
+                        }
+                    </mat-radio-group>
+                </div>
+                <div class="field flex-[1]">
+                    <label for="exam-preparation">Are you preparing for an exam?</label>
+                    <mat-radio-group aria-labelledby="exam-preparation" id="exam-preparation"
+                        [(ngModel)]="examPreparation" name="exam-preparation">
+                        <mat-radio-button [value]="true" class="radio-btn">Yes</mat-radio-button>
+                        <mat-radio-button [value]="false" class="radio-btn">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="row flex gap-3 items-start">
+                <div class="field flex-[1]">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="e.g. Mathematics, English" />
+                </div>
+                <div class="field flex-[1]">
+                    <label for="level">Level</label>
+                    <select name="level" id="level" [(ngModel)]="selectedLevel" class="w-full">
+                        @for (level of levels; track $index) {
+                        <option [value]="level.value">{{level.viewValue}}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <label for="learning-goals">learning goals</label>
+                <textarea id="learning-goals" name="learning-goals" class="w-full"
+                    placeholder="e.g. Improve grades, prepare for a specific exam, learn a new skill"></textarea>
+            </div>
+            <button class="lavi-button">Get to me!</button>
+        </form>
+    </section>
+</section>

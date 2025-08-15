@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+    --mat-sys-body-large-font: inherit;
+    --mat-sys-body-medium-font: inherit;
+    --mat-sys-body-small-font: inherit;
+    --mat-sys-title-large-font: inherit;
+    --mat-sys-title-medium-font: inherit;
+    --mat-sys-title-small-font: inherit;
+
+    @include mat.expansion-overrides((container-shape: none,
+            container-background-color: transparent,
+            header-text-weight: 450,
+            header-hover-state-layer-color: hsl(from var(--primary) h s l/0.3)));
+}
+
+.mat-expansion-panel {
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px !important;
+}
+
+.mat-expansion-panel-header {
+    padding-inline: 10px !important;
+    font-weight: 500;
+}

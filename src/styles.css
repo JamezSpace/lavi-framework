@@ -14,6 +14,7 @@
 
 html,
 body {
+    height: 100%;
     scroll-behavior: smooth;
     font-family: 'Outfit', sans-serif;
     font-optical-sizing: auto;
@@ -37,9 +38,13 @@ h4 {
 }
 
 input,
+select,
 textarea {
     outline: none;
+    border: 1.5px solid;
     border-color: var(--neutral-light);
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
 
     &:hover {
         border-color: hsl(from var(--neutral-light) h s calc(l - (l * 0.08)));
@@ -48,10 +53,25 @@ textarea {
     &:focus {
         border-color: var(--primary);
     }
+
+    &::placeholder {
+        color: hsl(from var(--neutral-dark) h s l/0.6);
+    }
 }
 
 select {
-    outline: none;
+    min-width: none;
+}
+
+textarea {
+    min-height: 5rem;
+    max-height: 10rem;
+}
+
+label {
+    display: block;
+    text-transform: capitalize;
+    margin-bottom: 5px;
 }
 
 button {
@@ -164,6 +184,11 @@ button {
         color: var(--bg-white);
         border-color: var(--bg-white);
     }
+
+    &.white:hover {
+        background-color: var(--bg-white);
+        color: var(--primary);
+    }
 }
 
 .glassy-blur {
@@ -186,4 +211,20 @@ button {
 
 .bg-accent {
     background-color: var(--accent);
+}
+
+.color-accent {
+    color: var(--accent);
+
+    .darkened {
+        color: hsl(from var(--accent) h s calc(l - 10));
+    }
+}
+
+.color-primary {
+    color: var(--primary);
+
+    .darkened {
+        color: hsl(from var(--primary) h s calc(l - 10));
+    }
 }

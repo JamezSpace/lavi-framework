@@ -120,14 +120,16 @@
 }
 
 .steps-container {
-
+    counter-reset: step;
 }
 
 .step {
     padding: 15px 30px;
-    /* border: 1px solid var(--neutral-dark); */
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    position: relative;
+    counter-increment: step;
+    overflow: hidden;
 
     & > h3 {
         text-transform: capitalize;
@@ -138,4 +140,21 @@
     & > p {
         text-align: center;
     }
+
+    &::after {
+        content: counter(step);
+        position: absolute;
+        top: -48px;
+        right: 15px;
+        font-size: 128px;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: transform 300ms ease, opacity 200ms ease;
+    }
+
+    &:hover::after {
+        opacity: 0.1;
+        transform: translateX(0) ;
+    }
+
 }

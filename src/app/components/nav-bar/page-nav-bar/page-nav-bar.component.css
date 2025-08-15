@@ -25,3 +25,7 @@ header {
         transform: translateY(0);
     }
 }
+
+.active {
+    text-decoration: underline;
+}

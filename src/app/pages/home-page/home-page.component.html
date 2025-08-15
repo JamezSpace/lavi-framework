@@ -81,7 +81,9 @@
             </p>
         </div>
     </section>
-    <button class="lavi-button secondary w-fit mx-auto">find a tutor</button>
+    <button 
+        class="lavi-button secondary w-fit mx-auto"
+        (click)="navigateToPage('tutors')">find a tutor</button>
 </section>
 
 <div class="gradient-bg h-[30dvh]"></div>
@@ -111,8 +113,8 @@
 <div class="bg-primary-gradient flipped h-[20dvh]"></div>
 <div class="gradient-bg flipped h-[30dvh]"></div>
 
-<div class="p-5">
-    <section class="mb-20">
+<div class="p-5 pt-10">
+    <section class="mb-30">
         <article class="text-center">
             <h2 class="text-[110%]">How you go about it?</h2>
             <p>It takes just a few clicks to find the perfect tutor and start improving your grades.</p>
@@ -139,7 +141,9 @@
                 <p class="text-[110%]">Join our community of successful students and parents today.</p>
             </article>
             <div class="lavi-flex justify-center my-10">
-                <button class="lavi-button secondary white">find a tutor</button>
+                <button 
+                    class="lavi-button secondary white"
+                    (click)="navigateToPage('tutors')">start learning</button>
             </div>
         </div>
     </section>

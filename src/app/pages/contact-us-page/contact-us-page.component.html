@@ -1,0 +1,82 @@
+<app-page-nav-bar />
+
+<article class="text-center mb-8 px-5">
+    <h1 class="capitalize">contact & support</h1>
+    <p>We're here to help! Choose from the options below to get in touch with our support team.</p>
+</article>
+
+<div class="px-7 max-sm:px-5 grid grid-cols-2 max-md:grid-cols-1 gap-10">
+    <section class="faq-section left">
+        <h2 class="mb-10 sub-heading">frequently asked questions</h2>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Booking </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>You can find this on the 
+                    <a href="tutors" class="color-accent darkened underline tracking-tight">get a tutor</a> page.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Payments </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Payment can be made via credit card, PayPal, or bank transfer.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Tutoring modes </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Tutoring modes include offline, online.</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </section>
+
+    <section>
+        <div class="mb-15">
+            <h2 class="capitalize sub-heading">contact form</h2>
+            <p class="mb-2">For inquiries, please fill out the form below:</p>
+            <form action="">
+                <div class="row">
+                    <label for="username">your name</label>
+                    <input type="text" id="username" placeholder="e.g. John Doe">
+                </div>
+                <div class="row">
+                    <label for="useremail">your email</label>
+                    <input type="email" id="useremail" placeholder="e.g. your-email@example.com">
+                </div>
+                <div class="row">
+                    <label for="subject">subject</label>
+                    <input type="text" id="subject" placeholder="e.g. questions about billing">
+                </div>
+                <div class="row">
+                    <label for="usermessage">message</label>
+                    <textarea name="usermessage" id="usermessage"
+                        placeholder="e.g. write your message here..."></textarea>
+                </div>
+                <button type="submit" class="lavi-button accent w-full">submit</button>
+            </form>
+        </div>
+        <div class="contact-info-section">
+            <h2 class="sub-heading">contact information</h2>
+            <p class="mb-2">If you need immediate assistance, please reach out to us via:</p>
+            <ul>
+                <li class="lavi-flex gap-3">
+                    <div class="left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36"><rect width="36" height="36" fill="none"/><path fill="currentColor" d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                    </div>
+                    Email:
+                    <a href="mailto:lavi-support@gmail.com">support&commat;example.com</a>
+
+                </li>
+                <li class="lavi-flex gap-3">
+                    <div class="left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="m9.159 5.712l-.403-.906c-.263-.592-.395-.888-.592-1.115a2 2 0 0 0-.928-.603C6.949 3 6.625 3 5.976 3c-.948 0-1.422 0-1.82.182a2.12 2.12 0 0 0-1.061 1.169c-.143.413-.102.838-.02 1.689q1.31 13.575 14.886 14.885c.85.082 1.275.123 1.689-.02a2.12 2.12 0 0 0 1.168-1.06c.182-.399.182-.873.182-1.821c0-.649 0-.973-.088-1.26a2 2 0 0 0-.603-.928c-.226-.197-.523-.328-1.115-.592l-.906-.402c-.642-.285-.962-.428-1.288-.459a2 2 0 0 0-.919.128c-.305.119-.574.343-1.114.793c-.537.447-.805.67-1.133.79a2.16 2.16 0 0 1-.981.101c-.346-.05-.61-.192-1.14-.475c-1.645-.88-2.553-1.787-3.433-3.433c-.283-.53-.424-.794-.475-1.14a2.16 2.16 0 0 1 .1-.98c.12-.329.344-.597.791-1.134c.45-.54.675-.809.793-1.114c.114-.292.158-.607.128-.919c-.03-.325-.173-.646-.459-1.288"/></svg>
+                    </div>
+                    <div class="right">
+                        Phone: (123) 456-7890
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, ElementRef, Inject, NgZone, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, Inject, NgZone, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { PageNavBarComponent } from "../../components/nav-bar/page-nav-bar/page-nav-bar.component";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home-page',
@@ -11,6 +12,8 @@ import { isPlatformBrowser } from '@angular/common';
     styleUrl: './home-page.component.css'
 })
 export class HomePageComponent implements AfterViewInit {
+    private router = inject(Router);
+    
     constructor(
         @Inject(PLATFORM_ID) private platformId: Object,
         private zone: NgZone
@@ -67,4 +70,7 @@ export class HomePageComponent implements AfterViewInit {
         });
     }
 
+    navigateToPage(page: string) {
+        this.router.navigate([page]);
+    }
 }
