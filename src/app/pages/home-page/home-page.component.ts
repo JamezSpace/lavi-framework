@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ElementRef, inject, Inject, NgZone, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, Inject, NgZone, PLATFORM_ID, ViewChild } from '@angular/core';
 import { PageNavBarComponent } from "../../components/nav-bar/page-nav-bar/page-nav-bar.component";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-home-page',
@@ -63,9 +64,8 @@ export class HomePageComponent implements AfterViewInit {
                 scrub: 1,
                 pin: this.testimonials_section.nativeElement,
                 trigger: this.testimonials_section.nativeElement,
-                start: "top+=10% 30%",
-                end: `+=${scrollDistance}`,
-                markers: true
+                start: "top 20%",
+                end: `+=${scrollDistance+400}`
             }
         });
     }

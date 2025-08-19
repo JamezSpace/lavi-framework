@@ -1,0 +1,29 @@
+footer {
+    background-color: var(--neutral-dark);
+    color: hsl(from var(--bg-white) h s l/0.9);
+}
+
+.right {
+    nav {
+        p {
+            text-transform: capitalize;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 95%;
+            color: var(--neutral-light);
+        }
+
+        a {
+            display: block;
+            transition: color 200ms;
+            line-height: 1em;
+            margin-bottom: 8px;
+
+            &:hover {
+                color: var(--bg-white);
+                text-decoration: underline;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

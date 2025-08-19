@@ -1,4 +1,4 @@
-<header class="lavi-flex justify-between px-5 py-3 font-normal glassy-blur sticky top-0 z-[5]">
+<header class="lavi-flex justify-between px-5 py-3 font-normal glassy-blur w-full fixed top-0 z-[5]">
     <a href="/">
         <img src="/logo_text_no_bg.png" alt="lavis's logo" class="w-10 object-cover">
     </a>
@@ -55,5 +55,5 @@
     </nav>
 
     <a href="/auth" class="lavi-button secondary white block mt-8 mb-4 max-[376px]:inline-block">Log In</a>
-    <button class="lavi-button hidden max-[376px]:inline-block ml-5">Start Learning</button>
+    <button class="lavi-button hidden max-[376px]:inline-block ml-5" (click)="navigateToPage('tutors')">Start Learning</button>
 </div>

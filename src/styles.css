@@ -60,7 +60,7 @@ textarea {
 }
 
 select {
-    min-width: none;
+    max-width: none;
 }
 
 textarea {

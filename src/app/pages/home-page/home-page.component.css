@@ -14,7 +14,7 @@
     background-color: rgb(from var(--bg-white) r g b/ 0.5);
     border-radius: 0.5rem;
     flex: 1;
-    background-color: antiquewhite;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
     & > h3 {
         text-transform: capitalize;
@@ -109,7 +109,7 @@
 }
 
 .image-gradient {
-    background: linear-gradient(to bottom, hsl(from var(--primary) h s calc(l - 15) / 0.5)), url('/teacher-bg.webp');
+    background: linear-gradient(to bottom, hsl(from var(--primary) h calc(s - 15) calc(l - 15) / 0.5)), url('/teacher-bg.webp');
     color: var(--bg-white);
     background-size: cover;
 }

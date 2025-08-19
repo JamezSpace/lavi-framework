@@ -7,5 +7,35 @@ h2 {
 }
 
 .row {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.radio-fills-entire-space {
+    border-radius: 12px;
+    border: 1px solid var(--neutral-light);
+    position: relative;
+    padding: 0.25rem 1.5rem;
+
+    & input[type="radio"] {
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        border: none;
+    }
+
+    &:where(:has(input[type="radio"]:checked)) {
+        background-color: hsl(from var(--primary) h s l/0.2);
+        border-color: var(--primary);
+        color: var(--primary);
+        font-weight: 500;
+    }
+}
+
+select {
+    
 }
